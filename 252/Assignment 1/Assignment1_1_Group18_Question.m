@@ -62,7 +62,7 @@
     %Compute approximation sum for each t_convolution value
     
     %each convolution sum results in all values of x multiplied by some
-    %flipped and shifted version of y(t)... we can flip them since thats
+    %flipped and shifted version of y(t)... we can flip them since that's
     %true for all... then for each convolution step we can shift y(t)
     %(replacing unfilled spots with 0's), cut it off on the values that overlap xt and sum the multiplications of
     %each corralating indecies in each array
@@ -134,25 +134,25 @@
     %xticks(0:0.2:3);
     
 % Plotting to compare with matlab conv function
-    figure
-    subplot(211)
-    plot(t_convolution,zt)
-    xlabel('time (s)')
-    ylabel('z(t) (AU)')
-    title('Using Our Algorithm: Convolution of z(t) = x(t) * y(t)')
-    subplot(212)
+%     figure
+%     subplot(211)
+%     plot(t_convolution,zt)
+%     xlabel('time (s)')
+%     ylabel('z(t) (AU)')
+%     title('Using Our Algorithm: Convolution of z(t) = x(t) * y(t)')
+%     subplot(212)
     %Find convolution using matlabs function
-        zt = conv(xt,yt);
-    %Make a time axis the same length as the matlab result
-        for i = 1:(length(t_convolution)-2)
-            time(i) = t_convolution(i);
-        end
-    %Plot matlab function below our result
-    plot(time,zt)
-    xlabel('time (s)')
-    ylabel('z(t) (AU)')
-    title('Using Matlab Function: Convolution of z(t) = x(t) * y(t)')
-    
+%         zt = conv(xt,yt);
+%     %Make a time axis the same length as the matlab result
+%         for i = 1:(length(t_convolution)-2)
+%             time(i) = t_convolution(i);
+%         end
+%     %Plot matlab function below our result
+%     plot(time,zt)
+%     xlabel('time (s)')
+%     ylabel('z(t) (AU)')
+%     title('Using Matlab Function: Convolution of z(t) = x(t) * y(t)')
+%     
     
 %Shifts array right one index deleting the last element & fills left side with zero
  function yt_convolution = shift_array_right(yt_convolution)
